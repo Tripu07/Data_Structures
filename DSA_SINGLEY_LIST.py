@@ -37,16 +37,16 @@ class linkedlist:
             while temp.ref.ref is not None:   #we will have to check the reference of next to node because if we delete last node then reference of second last node becomes None/null
                 temp=temp.ref
             temp.ref=None
-    def insert_after_nodes(self,data,x):
+    def insert_at_any_position_x(self,data,x):
         newnode=node(data)
         temp=self.head
         i=1
-        while(i<x):   #x is the  position where you want to insert a node  ,considering the fact that index of node starts from zero 
+        while(i<x):   #x is the  position where you want to insert a node  ,considering the fact that index of node starts from zero,and it works from inserting from 1st posiition because our loop starts from 1
             temp=temp.ref
             i=i+1
         newnode.ref=temp.ref
         temp.ref=newnode
-        
+        #from the above method we can only insert from 1st position .and best thing is we don't need to write different code for after and before
             
         
                 
@@ -73,7 +73,7 @@ n2.ref=n3   #adress inside n2 is equal to location of n3, hence we equate
 #l1.insert_node(4)
 l1.insert_node_last(6)
 l1.delete_last_node()
-l1.insert_after_nodes(2.5,0)
+l1.insert_at_any_position_x(2.5,1)
 l1.traversal()
 
 
