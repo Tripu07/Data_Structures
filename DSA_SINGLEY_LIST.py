@@ -47,7 +47,18 @@ class linkedlist:
         newnode.ref=temp.ref
         temp.ref=newnode
         #from the above method we can only insert from 1st position .and best thing is we don't need to write different code for after and before
+    def delete_at_any_position_x(self,x):
+        temp=self.head
+        i=1
+        while(i<x):  # x is the position of element which should be deleted : considering the fact that position of node starts from zero
+            k=temp
+            temp=temp.ref
+            i=i+1
+        k.ref=temp.ref
+        
             
+
+        
         
                 
         
@@ -69,11 +80,14 @@ l1.head=n1    #adress stored in head is equal to location/adress of n1
 n2=node(2)
 n1.ref=n2  #adress inside n1 is equal to location of n2, hence we equate
 n3=node(3)
-n2.ref=n3   #adress inside n2 is equal to location of n3, hence we equate
+n2.ref=n3#adress inside n2 is equal to location of n3, hence we equate
 #l1.insert_node(4)
-l1.insert_node_last(6)
-l1.delete_last_node()
-l1.insert_at_any_position_x(2.5,1)
+n4=node(4)
+n3.ref=n4
+#l1.insert_node_last(6)
+#l1.delete_last_node()
+#l1.insert_at_any_position_x(2.5,1)
+l1.delete_at_any_position_x(4)
 l1.traversal()
 
 
