@@ -105,7 +105,23 @@ class bst:   #definition of a node =>definition of BST  because we don't have ot
             self.key=node.key
             self.lchild=self.lchild.delete_node(node.key)
             return self
-        
+    def min_max(self):
+        if self.lchild:
+            temp=self.lchild
+            while temp.lchild is not None:
+                temp=temp.lchild
+            print(f"Minimum value :{temp.key}")
+        else:
+            print(f"Minimum value :{self.key}")
+        if self.rchild:
+            temp=self.rchild
+            while temp.rchild is not None:
+                temp=temp.rchild
+            print(f"Maximum value :{temp.key}")
+        else:
+            print(f"Maximum value :{self.key}")
+                
+
                 
                     
             
@@ -135,5 +151,6 @@ for i in l1:
 #root.post_order_traversal()
 #root.level_traversal()
 #root.delete_node(16)
-root.in_order_traversal()
+#root.in_order_traversal()
+root.min_max()
             
