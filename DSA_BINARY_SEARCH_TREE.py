@@ -105,7 +105,7 @@ class bst:   #definition of a node =>definition of BST  because we don't have ot
             self.key=node.key
             self.lchild=self.lchild.delete_node(node.key)
             return self
-    def min_max(self):
+    def min_max(self):  #MINIMUM Value always lie on the left on the first left  child ,Maximum value always lie on the right on the first right  child
         if self.lchild:
             temp=self.lchild
             while temp.lchild is not None:
