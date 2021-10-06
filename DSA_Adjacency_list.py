@@ -21,6 +21,7 @@ def insert_edge(a,b,weight):    #INSERTION OF EDGE BETWEEN TWO GIVEN NODES  ,wth
         a1[temp2].append((a,weight))
 def delete_node(data):
     if data in nodes:
+        node_count=node_count-1
         nodes.remove(data)
         graph.pop(data)
         for i in a1:
