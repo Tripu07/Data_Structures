@@ -32,6 +32,25 @@ def print_graph():
         for j in i:
             print(j,end=" ")
         print()
+def delete_node(data):
+    if data in nodes:
+        node_count=node_count-1
+        temp=nodes.index(data)
+        nodes.remove(data)
+        graph.pop(temp)
+        for i in graph:
+            i.pop(temp)
+    else:
+        print("No such nodes in present")
+def delete_edge(a,b):
+    if a and b in nodes:
+        temp1=nodes.index(a)
+        temp2=nodes.index(b)
+        graph[temp1][temp2]=0
+        graph[temp2][temp1]=0
+    else:
+        print("No such edges present")
+            
 insert_node("a")
 insert_node("b")
 insert_node("c")
@@ -40,8 +59,11 @@ insert_edge("a","b")
 insert_edge("c","d")
 insert_edge("a","c")
 insert_edge("d","b")
+#delete_node("c")
+delete_edge("a","b")
 print(nodes)
 print_graph()
+
 
 
         
